@@ -66,6 +66,7 @@ Para cada entrada del feed se aplican, en este orden: `data-remove`, `data-filte
 | `card-list` | Tarjeta horizontal a ancho completo (vertical en pantallas < 992 px). | Título, descripción, fecha | Sí |
 | `card-color` | Tarjeta de blog en tonos salmón, con etiquetas de categoría. 3 por fila. | Categorías, imagen, autor, fecha, título, descripción | Sí |
 | `card-dark` | Igual que `card-color` pero con fondo oscuro, que pasa a salmón al pasar el ratón. | Igual que `card-color` | Sí |
+| `card-hero` | Dos columnas al 50 % con 8 px de separación (una sobre otra en pantallas < 992 px). Izquierda: título, fecha y texto. Derecha: imagen y botón "Leer más"; la imagen se estira para que la columna mida lo mismo que la de texto. Solo el botón es enlace. | Título, fecha, descripción | Sí |
 | `debug` | Muestra en bruto los datos de cada entrada en formato JSON. Para pruebas. | Todos los datos | Sí |
 
 Si `data-template` tiene un valor que no existe, se usa `card-mini`.
@@ -96,7 +97,7 @@ Los mensajes de progreso y error aparecen en la consola del navegador con el pre
 
 El script solo genera el HTML; el aspecto de las tarjetas depende de CSS que debe estar cargado en la página:
 
-- **Estilos propios de las tarjetas** (`.lw-card`, `.card-mini`, `.card-list`, `.card-color`, `.card-dark`, variables `--blog-color`, `--radius`…). Se mantienen en el proyecto de CSS de LearnWorlds. `lw-rss-engine.css` es la copia de la que se sacaron.
+- **Estilos propios de las tarjetas** (`.lw-card`, `.card-mini`, `.card-list`, `.card-color`, `.card-dark`, `.card-hero`, variables `--blog-color`, `--radius`…). Se mantienen en el proyecto de CSS de LearnWorlds. `lw-rss-engine.css` es la copia de la que se sacaron.
 - **Estilos de LearnWorlds.** Las plantillas usan las clases de rejilla y tipografía de LearnWorlds (`span_4_of_12`, `learnworlds-heading3`, etc.) y variables CSS del tema (`--salmon-100` a `--salmon-300`, `--ash-700`, `--soft-beige`).
 
 Fuera de una página de LearnWorlds que cargue ese CSS, las tarjetas se verán sin maquetar.
