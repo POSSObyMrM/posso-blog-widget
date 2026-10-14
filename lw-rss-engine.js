@@ -111,16 +111,19 @@
             <div class="col span_12_of_12 no-padding flex-item lw-card-mb">
                 <div class="lw-card card-hero">
                     <div class="hero-col hero-info">
-                        <h3 class="learnworlds-heading3 learnworlds-element learnworlds-heading3-large lw-title">${data.title}</h3>
+                        <div class="lw-badge learnworlds-overline-text">Actividad</div>
                         <div class="lw-date">
                             <span class="lw-day learnworlds-main-text learnworlds-main-text-huge">${data.day}</span>
                             <span class="lw-month-year learnworlds-main-text learnworlds-main-text-normal bold">${data.month} ${data.year}</span>
                         </div>
+                        <h3 class="learnworlds-heading3 learnworlds-element learnworlds-heading3-large lw-title">${data.title}</h3>
                         <p class="learnworlds-main-text learnworlds-main-text-normal lw-description">${data.description}</p>
                     </div>
                     <div class="hero-col hero-media">
                         <div class="hero-image" style="background-image: url('${data.image || 'https://via.placeholder.com/400x300'}')"></div>
-                        <a href="${data.link}" class="hero-button learnworlds-main-text learnworlds-main-text-normal">Leer más</a>
+                        <a href="${data.link}" class="learnworlds-button learnworlds-button-solid-accent1 learnworlds-element js-same-content-child learnworlds-button-large has-icon-back cursor-pointer full-width">
+                            Leer más
+                        </a>
                     </div>
                 </div>
             </div>
