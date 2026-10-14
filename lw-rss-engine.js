@@ -46,7 +46,6 @@
             <div class="col span_12_of_12 no-padding flex-item lw-card-mb">
                 <a href="${data.link}" class="lw-card card-list">
                     <div class="row-section row-title-box">
-                        <span class="lw-badge learnworlds-overline-text">Así fue</span>
                         <h3 class="learnworlds-heading3 learnworlds-element learnworlds-heading3-large lw-title">${data.title}</h3>
                     </div>
                     <div class="row-section row-info-box">
@@ -170,7 +169,8 @@
             const dateObj = new Date(item.querySelector("pubDate").textContent);
             const descHtml = item.querySelector("description").textContent;
             return {
-                title: item.querySelector("title").textContent,
+                // Wrap everything after the first ":" in a <span>
+                title: item.querySelector("title").textContent.replace(/:(.*)$/s, ':<span>$1</span>'),
                 link: item.querySelector("link").textContent,
                 description: descHtml.replace(/<[^>]*>?/gm, '').substring(0, 180),
                 day: dateObj.getDate(),

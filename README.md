@@ -63,7 +63,7 @@ Para cada entrada del feed se aplican, en este orden: `data-remove`, `data-filte
 | Plantilla | Aspecto | Contenido | Imagen |
 |---|---|---|---|
 | `card-mini` | Tarjeta compacta con borde, distintivo "Actividad" y fecha grande. 3 por fila en escritorio. | Fecha y título | No |
-| `card-list` | Tarjeta horizontal a ancho completo (vertical en pantallas < 992 px), distintivo "Así fue". | Título, descripción, fecha | Sí |
+| `card-list` | Tarjeta horizontal a ancho completo (vertical en pantallas < 992 px). | Título, descripción, fecha | Sí |
 | `card-color` | Tarjeta de blog en tonos salmón, con etiquetas de categoría. 3 por fila. | Categorías, imagen, autor, fecha, título, descripción | Sí |
 | `card-dark` | Igual que `card-color` pero con fondo oscuro, que pasa a salmón al pasar el ratón. | Igual que `card-color` | Sí |
 | `debug` | Muestra en bruto los datos de cada entrada en formato JSON. Para pruebas. | Todos los datos | Sí |
@@ -82,7 +82,8 @@ Añadiendo una clase a un elemento que contenga el widget se cambian algunos col
 1. **Descarga el RSS.** Si la página está en `posso.es`, lo pide directamente a `/rss.xml`. En cualquier otro dominio lo pide a través del proxy público `corsproxy.io` para saltar la restricción CORS.
 2. **Filtra** las entradas según los atributos de configuración.
 3. **Normaliza los datos** de cada entrada:
-   - `title`, `link` y `categories` tal cual vienen en el RSS.
+   - `link` y `categories` tal cual vienen en el RSS.
+   - `title`: si contiene `:`, todo lo que va después de los primeros dos puntos se envuelve en un `<span>` para poder darle otro estilo (p. ej. `Taller:<span> Cerámica</span>`).
    - `description`: el HTML del RSS sin etiquetas, recortado a 180 caracteres.
    - `day`, `month`, `year`: a partir de `pubDate`, con el mes en español (`es-ES`).
    - `image`: la primera imagen (`src="..."`) que aparezca en la descripción del RSS.
